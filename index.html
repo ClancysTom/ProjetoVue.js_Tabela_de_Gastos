@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Gastos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>Tabela de Gastos</h1>
+
+            <!-- Componente de entrada de renda mensal líquida -->
+            <div class="input-container">
+                <label for="income">Renda Mensal Líquida:</label>
+                <input type="number" id="income" v-model="rendaMensal">
+                <button @click="calcularGastos">Confirmar</button>
+            </div>
+
+            <!-- Tabela de gastos mensais -->
+            <table class="table" v-if="mostrarTabela">
+                <thead>
+                    <tr>
+                        <th>Gasto</th>
+                        <th>Valor Mensal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Conta de água</td>
+                        <td>{{ gastosMensais.agua }}</td>
+                    </tr>
+                    <tr>
+                        <td>Conta de energia elétrica</td>
+                        <td>{{ gastosMensais.energia }}</td>
+                    </tr>
+                    <tr>
+                        <td>Conta de internet</td>
+                        <td>{{ gastosMensais.internet }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos com alimentação</td>
+                        <td>{{ gastosMensais.alimentacao }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos com aluguel</td>
+                        <td>{{ gastosMensais.aluguel }}</td>
+                    </tr>
+                    <tr>
+                        <td>Reserva para viagens</td>
+                        <td>{{ gastosMensais.viagens }}</td>
+                    </tr>
+                    <tr>
+                        <td>Reserva de emergência</td>
+                        <td>{{ gastosMensais.emergencia }}</td>
+                    </tr>
+                    <tr>
+                        <td>Dízimo</td>
+                        <td>{{ gastosMensais.dizimo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Tabela de gastos anuais -->
+            <table class="table" v-if="mostrarTabela">
+                <thead>
+                    <tr>
+                        <th>Gasto</th>
+                        <th>Valor Anual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Conta de água</td>
+                        <td>{{ gastosAnuais.agua }}</td>
+                    </tr>
+                    <tr>
+                        <td>Conta de energia elétrica</td>
+                        <td>{{ gastosAnuais.energia }}</td>
+                    </tr>
+                    <tr>
+                        <td>Conta de internet</td>
+                        <td>{{ gastosAnuais.internet }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos com alimentação</td>
+                        <td>{{ gastosAnuais.alimentacao }}</td>
+                    </tr>
+                    <tr>
+                        <td>Gastos com aluguel</td>
+                        <td>{{ gastosAnuais.aluguel }}</td>
+                    </tr>
+                    <tr>
+                        <td>Reserva para viagens</td>
+                        <td>{{ gastosAnuais.viagens }}</td>
+                    </tr>
+                    <tr>
+                        <td>Reserva de emergência</td>
+                        <td>{{ gastosAnuais.emergencia }}</td>
+                    </tr>
+                    <tr>
+                        <td>Dízimo</td>
+                        <td>{{ gastosAnuais.dizimo }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
